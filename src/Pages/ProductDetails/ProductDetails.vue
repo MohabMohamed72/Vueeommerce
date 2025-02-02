@@ -42,11 +42,12 @@
                     </div>
 
                     <div class="flex mt-5 gap-3">
-                        <button @click="addelement(AllproductDetails , Quantity) " 
+                        <button @click="twofuncaddbtn" 
                         class="flex items-center gap-2 text-[#ff6c3e] border-2 p-2 cursor-pointer bg-[#ff6b3e1a] border-[#ff6c3e] hover:bg-[#ff6b3e54]">
                             <AkCart />
                             <p>Add To Cart</p>
                         </button>
+                        
 
                         <button class="bg-[#ff6c3e] text-white p-2 cursor-pointer">
                             Buy Now
@@ -70,16 +71,24 @@
     import { ProductQuantity } from '../../Store/ProductsQuantity';
     import { AkCart } from '@kalimahapps/vue-icons';
     import {Cart} from '../../Store/Cart'
+    import { CAlert } from '@coreui/vue';
+
 
     export default{
         components:{
             AkCart,
+            CAlert,
 
         },
         methods:{
             ...mapActions(Mystore , ['getAllProductDetails']),
             ...mapActions(ProductQuantity , ['addone' ,'removeone' , 'setquantitytozero']),
             ...mapActions(Cart , ['addelement']),
+            twofuncaddbtn(){
+                this.addelement(this.AllproductDetails , this.Quantity)
+                this.setquantitytozero() ;
+
+            }
         },
         computed:{
             ...mapState(Mystore , ['AllproductDetails']),
