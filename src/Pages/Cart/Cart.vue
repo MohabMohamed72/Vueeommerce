@@ -15,7 +15,7 @@
                 <p>{{ pro.product.title }}</p>
                 <p>$ {{ pro.product.price }}</p>
                 <p>{{ pro.numbrtofproduct }}</p>
-                <p class="text-[#ff6c3e]">$ {{ (pro.product.price) * (pro.numbrtofproduct) }}</p>
+                <p class="text-[#ff6c3e]">$ {{ ((pro.product.price) * (pro.numbrtofproduct)).toFixed() }}</p>
                 <button @click="deleteelement(pro.product)" class="cursor-pointer">Delete</button> 
                 
             </div>
@@ -28,7 +28,7 @@
                 <p>Clear Cart</p>
             </button>
             <div class="flex flex-col items-end gap-3">
-                <p class="text-[12px]">total: <span>({{ totalcartnumber }} items)</span> : <span class="text-[#ff6c3e] text-[15px] font-[600]">$ {{ totalprice }}</span></p>
+                <p class="text-[12px]">total: <span>({{ totalcartnumber.toFixed() }} items)</span> : <span class="text-[#ff6c3e] text-[15px] font-[600]">$ {{ totalprice.toFixed() }}</span></p>
                 <button class="text-white bg-[#ff6c3e] font-[500] text-[13px] p-2">Check out</button>
             </div>
 
