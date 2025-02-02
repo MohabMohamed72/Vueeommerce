@@ -29,16 +29,29 @@ export const Cart = defineStore('Cart',{
 
 
       },
-      deleteelement(el){
+        deleteelement(el){  
+        this.totalcartnumber = 0;
+        this.totalprice = 0;
+        this.CartElementNumber =0 ;
+        this.elemntprice = 0 ;
 
+        this.CartElement = this.CartElement.filter((pro) => pro.product.id !== el.id );
         for(let i = 0 ; i < this.CartElement.length ; i++){
-        
-          if(this.CartElement[i].product.id === el.id){
-            this.CartElement[i].product ='';
-          }
-         
+          this.CartElementNumber =this.CartElement[i].numbrtofproduct;
+          this.elemntprice = (this.CartElement[i].product.price) * (this.CartElement[i].numbrtofproduct)
         }
+        this.totalcartnumber += this.CartElementNumber;
+        this.totalprice += this.elemntprice;
+     
       },
+      clearCart(){
+        this.totalcartnumber = 0;
+        this.totalprice = 0;
+        this.CartElementNumber =0 ;
+        this.elemntprice = 0 ;
+        this.CartElement = [];
+        
+      }
   
    
     },

@@ -10,6 +10,9 @@ export const ProductQuantity = defineStore('ProductQuantity',{
        },
        removeone(){
         this.Quantity--;
+       },
+       setquantitytozero(){
+        this.Quantity = 0;
        }
     }
 });

@@ -42,8 +42,8 @@
                     </div>
 
                     <div class="flex mt-5 gap-3">
-                        <button @click="addelement(AllproductDetails , Quantity)"
-                        class="flex items-center gap-2 text-[#ff6c3e] border-2 p-2 cursor-pointer bg-[#ff6b3e1a] border-[#ff6c3e]">
+                        <button @click="addelement(AllproductDetails , Quantity) " 
+                        class="flex items-center gap-2 text-[#ff6c3e] border-2 p-2 cursor-pointer bg-[#ff6b3e1a] border-[#ff6c3e] hover:bg-[#ff6b3e54]">
                             <AkCart />
                             <p>Add To Cart</p>
                         </button>
@@ -78,7 +78,7 @@
         },
         methods:{
             ...mapActions(Mystore , ['getAllProductDetails']),
-            ...mapActions(ProductQuantity , ['addone' ,'removeone']),
+            ...mapActions(ProductQuantity , ['addone' ,'removeone' , 'setquantitytozero']),
             ...mapActions(Cart , ['addelement']),
         },
         computed:{

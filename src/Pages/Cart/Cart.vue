@@ -10,7 +10,8 @@
         </div>
         <div class="mt-3">
             <!-- <button @click="show">show</button> -->
-            <div  v-for="(pro ,index ) in CartElement" v-show="pro.product !== '' " :key="pro.id" class="w-full py-3  flex justify-between p-1 text-gray-400 text-[13px] bg-white px-3">
+             <!-- v-show="pro.product !== '' " -->
+            <div  v-for="(pro ,index ) in CartElement"  :key="pro.id" class="w-full py-3  flex justify-between p-1 text-gray-400 text-[13px] bg-white px-3">
                 <p>{{ index + 1 }}</p>
                 <p>{{ pro.product.title }}</p>
                 <p>$ {{ pro.product.price }}</p>
@@ -23,7 +24,7 @@
 
 
         <div class="bg-white w-full rounded-md flex justify-between px-2 mt-4 py-2">
-            <button class="flex items-center gap-2 text-[#ff6c3e] border-2 border-[#ff6c3e] p-1 text-[12px] bg-[#ff6b3e11] h-fit">
+            <button class="flex items-center gap-2 cursor-pointer hover:bg-[#ff6b3e62] text-[#ff6c3e] border-2 border-[#ff6c3e] p-1 text-[12px] bg-[#ff6b3e11] h-fit" @click="clearCart">
                 <IoSharpTrashBin />
                 <p>Clear Cart</p>
             </button>
@@ -61,7 +62,7 @@
         },
         methods:{
       
-           ...mapActions(Cart,['deleteelement' ])
+           ...mapActions(Cart,['deleteelement' ,'clearCart' ])
             
         },
      
