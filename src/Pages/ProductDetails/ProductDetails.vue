@@ -7,22 +7,22 @@
                 <div class=" w-[70%] ml-auto mr-auto">
                     <img :src="AllproductDetails.images[0]" alt="Product Image">
                 </div>
-                <div class="flex pb-3 gap-3 w-fit ml-auto mr-auto  max-sm:-translate-y-10 max-md:translate-y-0">
+                <div class="flex pb-3 flex-wrap gap-3 w-fit ml-auto mr-auto  max-sm:-translate-y-10 max-md:translate-y-0">
                     <img v-for="img in AllproductDetails.images" :key="img" :src="img" alt="another images" class="size-24 border-2 rounded-md border-[#ff6c3e]">
                 </div>
             </div>
 
-            <div class="flex flex-col max-sm:px-3 mt-10 max-sm:mt-3">
+            <div class="flex flex-col max-sm:px-3 mt-10 max-sm:mt-1">
                     <div class="mr-auto mt-3">
                         <h1 class="font-[500]">{{ AllproductDetails.title }}</h1>
                         <p class="text-justify mt-1 text-gray-500 w-[80%] text-[13px]">{{AllproductDetails.description}}</p>
                     </div>
 
                     <div >
-                        <ul class="flex mt-3 gap-5 ">
+                        <ul class="flex mt-3 gap-5 max-md:flex-col max-md:gap-2 ">
                             <li class="text-[#ff6c3e] text-[12px]">Rating: <span class="text-gray-500  border-r-2 pr-2 border-gray-300">{{AllproductDetails.rating  }}</span></li>
                             <li class="text-[#ff6c3e] text-[12px]">Brand: <span class="text-gray-500  border-r-2 pr-2 border-gray-300">{{AllproductDetails.brand  }}</span></li>
-                            <li class="text-[#ff6c3e] text-[12px]">Category: <span class="text-gray-500"> {{AllproductDetails.category  }}</span></li>
+                            <li class="text-[#ff6c3e] text-[12px]">Category: <span class="text-gray-500 max-md:border-r-2 max-md:pr-2 max-md:border-gray-300"> {{AllproductDetails.category  }}</span></li>
                         </ul>
                     </div>
 
